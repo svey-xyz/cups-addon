@@ -13,15 +13,15 @@ arch:
   - i386
 hassio_api: true
 host_network: true
-image: arestello/{arch}-addon-cups
+#image: arestello/{arch}-addon-cups
 init: false
 ports:
   631/tcp: 631
 ports_description:
   631/tcp: CUPS web interface and printing port
 options:
-  admin_username: "printadmin"
-  admin_password: null
+  admin_username: "admin"
+  admin_password: "admin"
 schema:
   admin_username: str
   admin_password: password

@@ -1,9 +1,9 @@
 #!/usr/bin/with-contenv bash
 
-# Create CUPS configuration directory if it doesn't exist
+# Create CUPS configuration directory if it doesn’t exist
 mkdir -p /etc/cups
 
-# Basic CUPS configuration
+# Basic CUPS configuration without admin authentication
 cat > /etc/cups/cupsd.conf << EOL
 # Listen on all interfaces
 Listen 0.0.0.0:631
@@ -17,10 +17,8 @@ Listen 0.0.0.0:631
   Allow 192.168.0.0/16
 </Location>
 
-# Admin access
+# Admin access (no authentication)
 <Location /admin>
-  AuthType Basic
-  Require user ${CUPS_ADMIN_USERNAME:-printadmin}
   Order allow,deny
   Allow localhost
   Allow 10.0.0.0/8
@@ -32,15 +30,10 @@ Listen 0.0.0.0:631
 WebInterface Yes
 
 # Default settings
-DefaultAuthType Basic
+DefaultAuthType None
 JobSheets none,none
 PreserveJobHistory No
 EOL
 
-# Set admin password if provided
-if [ -n "${CUPS_ADMIN_PASSWORD}" ]; then
-    echo "${CUPS_ADMIN_USERNAME:-printadmin}:${CUPS_ADMIN_PASSWORD}" | chpasswd
-fi
-
 # Start CUPS service
-rc-service cupsd start
+/usr/sbin/cupsd -f

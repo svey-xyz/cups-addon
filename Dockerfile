@@ -2,20 +2,19 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Add env
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 
 # Setup base
 RUN \
+    echo "http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -d'.' -f1,2)/main" > /etc/apk/repositories && \
+    echo "http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -d'.' -f1,2)/community" >> /etc/apk/repositories && \
+    apk update && \
     apk add --no-cache \
         cups \
-        cups-pdf \
         cups-filters \
-        hplip \
         ghostscript \
-        py3-reportlab \
-        libjpeg \
-        net-snmp \
-    && rc-update add cupsd boot
+        libjpeg-turbo \
+        net-snmp
 
 # Copy data
 COPY rootfs /
