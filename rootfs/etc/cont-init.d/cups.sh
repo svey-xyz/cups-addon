@@ -47,6 +47,7 @@ EOL
 
 # Create a symlink from the default config location to our persistent location
 ln -sf /data/cups/config/cupsd.conf /etc/cups/cupsd.conf
+ln -sf /data/cups/config/printers.conf /etc/cups/printers.conf
 
 # Start CUPS service
 /usr/sbin/cupsd -f

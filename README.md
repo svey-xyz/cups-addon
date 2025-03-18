@@ -106,6 +106,11 @@ This add-on supports various printer types:
 - For USB printers, you may need to configure USB device pass-through to the add-on.
 - Check CUPS logs in the add-on's Log tab.
 
+
+### Printer Drivers
+   https://www.openprinting.org/download/PPD/
+   https://www.openprinting.org/drivers/
+
 ### Authentication Issues
 
 - Verify you're using the correct username and password configured in the add-on settings.

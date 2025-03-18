@@ -20,7 +20,8 @@ RUN \
         cups-filters \
         ghostscript \
         libjpeg-turbo \
-        net-snmp
+        net-snmp \
+        epson-inkjet-printer-escpr
 
 # Copy data
 COPY rootfs /
