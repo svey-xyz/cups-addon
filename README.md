@@ -16,6 +16,7 @@ This Home Assistant add-on provides a CUPS (Common Unix Printing System) print s
 - **Secure Administration**: Optional authentication for the CUPS admin interface
 - **Printer Support**: Compatible with a wide range of network and USB printers
 - **Lightweight**: Built on Alpine Linux for minimal resource usage
+- **Data Persistence**: Printer settings and configurations persist across restarts and updates
 
 ## Installation
 
@@ -126,6 +127,21 @@ This project is licensed under the MIT License.
 
 ## Credits
 
-- Built by [Andrea Restelli](https://github.com/arest)
+- Built by [Andrea Restello](https://github.com/arest)
 - Powered by [Home Assistant](https://www.home-assistant.io/) and [CUPS](https://www.cups.org/)
+
+## Data Persistence
+
+This add-on stores all CUPS data in the Home Assistant `/data` directory, ensuring:
+
+- Printer configurations persist across add-on restarts
+- Print jobs and settings are maintained through system reboots
+- Add-on updates won't cause loss of printer configurations
+- All CUPS data is included in Home Assistant backups
+
+The following directories are maintained in the persistent storage:
+- `/data/cups/config`: CUPS configuration files
+- `/data/cups/cache`: CUPS cache data
+- `/data/cups/logs`: CUPS log files
+- `/data/cups/state`: CUPS state information
 
