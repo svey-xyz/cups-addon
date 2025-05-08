@@ -40,7 +40,7 @@ If you prefer to manually install:
 
 2. Copy the repository to your Home Assistant add-ons directory:
    ```bash
-   scp -r cups-addon root@<your-ha-ip>:/addons/
+   scp -r cups-addon/cups root@<your-ha-ip>:/addons/
    ```
 
 3. In Home Assistant, go to **Settings** → **Add-ons** → **Add-on Store**.
