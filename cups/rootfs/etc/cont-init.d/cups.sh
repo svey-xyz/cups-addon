@@ -17,6 +17,7 @@ mkdir -p /etc/cups
 cat > /data/cups/config/cupsd.conf << EOL
 # Listen on all interfaces
 Listen 0.0.0.0:631
+ServerAlias *
 
 # Allow access from local network
 <Location />
