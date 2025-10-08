@@ -21,44 +21,44 @@ Listen 0.0.0.0:631
 # Allow access from local network
 <Location />
   Order allow,deny
-	Allow print.local.svey.xyz
+	Allow from *.local.svey.xyz
   Allow localhost
-  Allow 10.0.0.0/8
-  Allow 10.50.0.0/16
-	Allow 10.11.0.0/16
-	Allow 10.10.0.0/16
+  Allow from 10.0.0.*
+  Allow from 10.50.0.*
+	Allow from 10.11.1.*
+	Allow from 10.10.0.*
 </Location>
 
 # Admin access (no authentication)
 <Location /admin>
   Order allow,deny
-	Allow print.local.svey.xyz
+	Allow from *.local.svey.xyz
   Allow localhost
-  Allow 10.0.0.0/8
-  Allow 10.50.0.0/16
-	Allow 10.11.0.0/16
-	Allow 10.10.0.0/16
+  Allow from 10.0.0.*
+  Allow from 10.50.0.*
+	Allow from 10.11.1.*
+	Allow from 10.10.0.*
 </Location>
 
 # Job management permissions
 <Location /jobs>
   Order allow,deny
-	Allow print.local.svey.xyz
+	Allow from *.local.svey.xyz
   Allow localhost
-  Allow 10.0.0.0/8
-  Allow 10.50.0.0/16
-	Allow 10.11.0.0/16
-	Allow 10.10.0.0/16
+  Allow from 10.0.0.*
+  Allow from 10.50.0.*
+	Allow from 10.11.1.*
+	Allow from 10.10.0.*
 </Location>
 
 <Limit Send-Document Send-URI Hold-Job Release-Job Restart-Job Purge-Jobs Set-Job-Attributes Create-Job-Subscription Renew-Subscription Cancel-Subscription Get-Notifications Reprocess-Job Cancel-Current-Job Suspend-Current-Job Resume-Job Cancel-My-Jobs Close-Job CUPS-Move-Job CUPS-Get-Document>
   Order allow,deny
-	Allow print.local.svey.xyz
+	Allow from *.local.svey.xyz
   Allow localhost
-  Allow 10.0.0.0/8
-  Allow 10.50.0.0/16
-	Allow 10.11.0.0/16
-	Allow 10.10.0.0/16
+  Allow from 10.0.0.*
+  Allow from 10.50.0.*
+	Allow from 10.11.1.*
+	Allow from 10.10.0.*
 </Limit>
 
 # Enable web interface
