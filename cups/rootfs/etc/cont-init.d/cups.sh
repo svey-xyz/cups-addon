@@ -24,6 +24,7 @@ Listen 0.0.0.0:631
 	Allow from *.local.svey.xyz
   Allow localhost
   Allow from 10.0.0.*
+  Allow from 10.1.0.*
   Allow from 10.50.0.*
 	Allow from 10.11.1.*
 	Allow from 10.10.0.*
@@ -35,6 +36,7 @@ Listen 0.0.0.0:631
 	Allow from *.local.svey.xyz
   Allow localhost
   Allow from 10.0.0.*
+  Allow from 10.1.0.*
   Allow from 10.50.0.*
 	Allow from 10.11.1.*
 	Allow from 10.10.0.*
@@ -46,6 +48,7 @@ Listen 0.0.0.0:631
 	Allow from *.local.svey.xyz
   Allow localhost
   Allow from 10.0.0.*
+  Allow from 10.1.0.*
   Allow from 10.50.0.*
 	Allow from 10.11.1.*
 	Allow from 10.10.0.*
@@ -56,6 +59,7 @@ Listen 0.0.0.0:631
 	Allow from *.local.svey.xyz
   Allow localhost
   Allow from 10.0.0.*
+  Allow from 10.1.0.*
   Allow from 10.50.0.*
 	Allow from 10.11.1.*
 	Allow from 10.10.0.*
