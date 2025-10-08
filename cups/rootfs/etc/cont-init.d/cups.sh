@@ -17,18 +17,15 @@ mkdir -p /etc/cups
 cat > /data/cups/config/cupsd.conf << EOL
 # Listen on all interfaces
 Listen 0.0.0.0:631
-ServerAlias *
+ServerAlias print.local.svey.xyz
 
 # Allow access from local network
 <Location />
   Order allow,deny
 	Allow from *.local.svey.xyz
   Allow localhost
-  Allow from 10.0.0.*
-  Allow from 10.1.0.*
   Allow from 10.50.0.*
 	Allow from 10.11.1.*
-	Allow from 10.10.0.*
 </Location>
 
 # Admin access (no authentication)
@@ -36,11 +33,8 @@ ServerAlias *
   Order allow,deny
 	Allow from *.local.svey.xyz
   Allow localhost
-  Allow from 10.0.0.*
-  Allow from 10.1.0.*
   Allow from 10.50.0.*
 	Allow from 10.11.1.*
-	Allow from 10.10.0.*
 </Location>
 
 # Job management permissions
@@ -48,22 +42,16 @@ ServerAlias *
   Order allow,deny
 	Allow from *.local.svey.xyz
   Allow localhost
-  Allow from 10.0.0.*
-  Allow from 10.1.0.*
   Allow from 10.50.0.*
 	Allow from 10.11.1.*
-	Allow from 10.10.0.*
 </Location>
 
 <Limit Send-Document Send-URI Hold-Job Release-Job Restart-Job Purge-Jobs Set-Job-Attributes Create-Job-Subscription Renew-Subscription Cancel-Subscription Get-Notifications Reprocess-Job Cancel-Current-Job Suspend-Current-Job Resume-Job Cancel-My-Jobs Close-Job CUPS-Move-Job CUPS-Get-Document>
   Order allow,deny
 	Allow from *.local.svey.xyz
   Allow localhost
-  Allow from 10.0.0.*
-  Allow from 10.1.0.*
   Allow from 10.50.0.*
 	Allow from 10.11.1.*
-	Allow from 10.10.0.*
 </Limit>
 
 # Enable web interface
